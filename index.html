@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>J.JIMPORTS TECH - iPhones Premium</title>
+  <meta name="description" content="Compre iPhones de última geração com garantia e atendimento premium na J.JIMPORTS TECH" />
+  <style>
+    :root {
+      --primary-blue: #0ea5ff;
+      --secondary-blue: #31d5ff;
+      --accent-blue: #2ec5ff;
+      --dark-bg: #0a0e17;
+      --card-bg: rgba(15, 23, 42, 0.7);
+      --border-color: rgba(14, 165, 255, 0.15);
+      --text-primary: #ffffff;
+      --text-secondary: #a0aec0;
+      --text-muted: #64748b;
+      --success: #10b981;
+      --glow: rgba(14, 165, 255, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+      background: linear-gradient(135deg, #0a0e17 0%, #1a1f35 50%, #0f172a 100%);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(14, 165, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(49, 213, 255, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      backdrop-filter: blur(20px);
+      background: rgba(10, 14, 23, 0.8);
+      border-bottom: 1px solid rgba(14, 165, 255, 0.1);
+      z-index: 1000;
+      animation: slideDown 0.6s ease;
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .header-content {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 30px var(--glow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo-icon::before {
+      content: '';
+      position: absolute;
+      width: 22px;
+      height: 30px;
+      border: 2.5px solid white;
+      border-radius: 7px;
+      box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.2);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .logo-text .main {
+      font-size: 1.1rem;
+      background: linear-gradient(135deg, var(--secondary-blue), #6dd5ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .logo-text .sub {
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.5px;
+    }
+
+    nav {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary-blue);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--text-primary);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-secondary {
+      background: rgba(14, 165, 255, 0.1);
+      color: var(--primary-blue);
+      border: 1px solid rgba(14, 165, 255, 0.3);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(14, 165, 255, 0.2);
+      border-color: rgba(14, 165, 255, 0.5);
+      box-shadow: 0 0 20px rgba(14, 165, 255, 0.2);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+      color: var(--dark-bg);
+      border: none;
+      box-shadow: 0 0 30px rgba(14, 165, 255, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px rgba(14, 165, 255, 0.4);
+    }
+
+    /* HERO */
+    main {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero {
+      margin-top: 80px;
+      padding: 80px 0 120px;
+      min-height: calc(100vh - 80px);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 1.1;
+      font-weight: 900;
+      margin-bottom: 20px;
+      letter-spacing: -2px;
+    }
+
+    .hero-text h1 .blue {
+      background: linear-gradient(135deg, var(--secondary-blue), #6dd5ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: 30px;
+      line-height: 1.8;
+      max-width: 500px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 450px;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--secondary-blue), #6dd5ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 5px;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .hero-visual {
+      position: relative;
+      height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .phone-circle {
+      width: 100%;
+      max-width: 500px;
+      aspect-ratio: 1;
+      background: radial-gradient(circle at 30% 30%, rgba(14, 165, 255, 0.2), transparent 60%);
+      border: 2px solid rgba(14, 165, 255, 0.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 
+        0 0 60px rgba(14, 165, 255, 0.15),
+        inset 0 0 60px rgba(14, 165, 255, 0.05);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .phone-content {
+      text-align: center;
+      z-index: 2;
+    }
+
+    .phone-logo {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 15px;
+      letter-spacing: -1px;
+    }
+
+    .phone-logo .blue {
+      background: linear-gradient(135deg, var(--secondary-blue), #6dd5ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .phone-sub {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .phone-tech {
+      color: var(--secondary-blue);
+      text-shadow: 0 0 15px rgba(49, 213, 255, 0.4);
+    }
+
+    .phone-mockup {
+      width: 140px;
+      height: 170px;
+      border: 4px solid rgba(255, 255, 255, 0.9);
+      border-radius: 28px;
+      background: linear-gradient(135deg, #0f1720, #1a2840);
+      position: relative;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      margin: 0 auto;
+    }
+
+    .phone-mockup::before {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 999px;
+      left: 50%;
+      top: -10px;
+      transform: translateX(-50%);
+    }
+
+    .phone-mockup::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 999px;
+      right: -12px;
+      top: 40px;
+    }
+
+    .phone-circle::before {
+      content: '';
+      position: absolute;
+      width: 90%;
+      height: 90%;
+      border: 1px solid rgba(14, 165, 255, 0.2);
+      border-radius: 50%;
+      top: 5%;
+      left: 5%;
+    }
+
+    /* PRODUCTS */
+    .products-section {
+      padding: 120px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 900;
+      margin-bottom: 15px;
+      letter-spacing: -1px;
+    }
+
+    .section-header p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .product-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 24px;
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(14, 165, 255, 0.1), transparent);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+
+    .product-card:hover {
+      transform: translateY(-12px);
+      border-color: rgba(14, 165, 255, 0.4);
+      box-shadow: 
+        0 20px 50px rgba(14, 165, 255, 0.2),
+        inset 0 0 30px rgba(14, 165, 255, 0.05);
+    }
+
+    .product-card:hover::before {
+      opacity: 1;
+    }
+
+    .product-image {
+      height: 240px;
+      background: linear-gradient(135deg, rgba(14, 165, 255, 0.1), rgba(49, 213, 255, 0.05));
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      border: 1px solid rgba(14, 165, 255, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-phone {
+      width: 110px;
+      height: 140px;
+      border: 3px solid rgba(255, 255, 255, 0.95);
+      border-radius: 24px;
+      background: linear-gradient(135deg, #0f1720, #1a2840);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+      position: relative;
+      animation: rotatePhone 8s ease-in-out infinite;
+    }
+
+    @keyframes rotatePhone {
+      0%, 100% {
+        transform: rotateY(0deg) rotateX(0deg);
+      }
+      50% {
+        transform: rotateY(15deg) rotateX(5deg);
+      }
+    }
+
+    .product-phone::before {
+      content: '';
+      position: absolute;
+      width: 18px;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 999px;
+      left: 50%;
+      top: -8px;
+      transform: translateX(-50%);
+    }
+
+    .product-phone::after {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 999px;
+      right: -10px;
+      top: 40px;
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(16, 185, 129, 0.2);
+      color: var(--success);
+      padding: 6px 12px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      letter-spacing: 0.5px;
+    }
+
+    .product-info {
+      position: relative;
+      z-index: 2;
+    }
+
+    .product-name {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .product-spec {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 15px;
+    }
+
+    .product-price {
+      font-size: 2rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--secondary-blue), #6dd5ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 20px;
+    }
+
+    .product-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-buy {
+      flex: 1;
+      background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+      color: var(--dark-bg);
+      border: none;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-buy:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(14, 165, 255, 0.3);
+    }
+
+    .btn-info {
+      flex: 1;
+      background: rgba(14, 165, 255, 0.1);
+      color: var(--primary-blue);
+      border: 1px solid rgba(14, 165, 255, 0.3);
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-info:hover {
+      background: rgba(14, 165, 255, 0.2);
+      border-color: rgba(14, 165, 255, 0.5);
+    }
+
+    /* FEATURES */
+    .features-section {
+      padding: 120px 0;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .feature-card {
+      background: linear-gradient(135deg, rgba(14, 165, 255, 0.08), rgba(49, 213, 255, 0.03));
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 40px 30px;
+      text-align: center;
+      transition: all 0.4s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(14, 165, 255, 0.4);
+      box-shadow: 0 20px 50px rgba(14, 165, 255, 0.15);
+    }
+
+    .feature-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .feature-card p {
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: 80px 0;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, rgba(14, 165, 255, 0.15), rgba(49, 213, 255, 0.08));
+      border: 2px solid rgba(14, 165, 255, 0.3);
+      border-radius: 32px;
+      padding: 60px 40px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-box::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(14, 165, 255, 0.1), transparent);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-box h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 900;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    .cta-box p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(14, 165, 255, 0.1);
+      padding: 40px 0;
+      background: rgba(10, 14, 23, 0.5);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-text {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* WHATSAPP FLOAT */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      z-index: 999;
+      box-shadow: 0 10px 40px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s ease;
+      border: 3px solid rgba(255, 255, 255, 0.2);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        box-shadow: 0 10px 40px rgba(37, 211, 102, 0.4);
+      }
+      50% {
+        box-shadow: 0 10px 60px rgba(37, 211, 102, 0.6);
+      }
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 15px 50px rgba(37, 211, 102, 0.5);
+    }
+
+    .whatsapp-float svg {
+      width: 35px;
+      height: 35px;
+      fill: white;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .header-actions {
+        gap: 8px;
+      }
+
+      .btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero-visual {
+        height: 400px;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .whatsapp-float {
+        width: 60px;
+        height: 60px;
+        bottom: 20px;
+        right: 20px;
+      }
+
+      .whatsapp-float svg {
+        width: 30px;
+        height: 30px;
+      }
+
+      .cta-box {
+        padding: 40px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="#" class="logo">
+          <div class="logo-icon"></div>
+          <div class="logo-text">
+            <div class="main">J.JIMPORTS</div>
+            <div class="sub">TECH</div>
+          </div>
+        </a>
+
+        <nav>
+          <a href="#inicio">Início</a>
+          <a href="#produtos">Produtos</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#contato">Contato</a>
+        </nav>
+
+        <div class="header-actions">
+          <a href="https://wa.me/5575999544520?text=Olá%2C%20quero%20saber%20mais%20sobre%20os%20iPhones%20da%20J.JIMPORTS%20TECH" target="_blank" class="btn btn-secondary">
+            💬 WhatsApp
+          </a>
+          <a href="#produtos" class="btn btn-primary">Ver Catálogo</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>
+              iPhones <span class="blue">Premium</span> ao Seu Alcance
+            </h1>
+            <p>
+              Compre iPhones de última geração com garantia de qualidade, atendimento 24h e entrega segura. Aproveite as melhores ofertas da J.JIMPORTS TECH.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="#produtos" class="btn btn-primary">Explorar Modelos</a>
+              <a href="https://wa.me/5575999544520?text=Olá%2C%20gostaria%20de%20consultar%20um%20iPhone%20da%20J.JIMPORTS%20TECH" target="_blank" class="btn btn-secondary">
+                Consultar Agora
+              </a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="stat-item">
+                <div class="stat-value">4</div>
+                <div class="stat-label">Modelos</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">+150</div>
+                <div class="stat-label">Clientes Felizes</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">24h</div>
+                <div class="stat-label">Atendimento</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="phone-circle">
+              <div class="phone-content">
+                <div class="phone-logo">
+                  <span class="blue">J.</span>JIMPORTS
+                </div>
+                <div class="phone-sub">Eletrônicos <span class="phone-tech">TECH</span></div>
+                <div class="phone-mockup"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products-section" id="produtos">
+      <div class="container">
+        <div class="section-header">
+          <h2>Modelos em Destaque</h2>
+          <p>Escolha o iPhone perfeito para suas necessidades com as melhores configurações</p>
+        </div>
+
+        <div class="products-grid">
+          <!-- iPhone 12 -->
+          <div class="product-card">
+            <div class="product-image">
+              <div class="product-phone"></div>
+              <div class="product-badge">DISPONÍVEL</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">iPhone 12</h3>
+              <p class="product-spec">64GB • A14 Bionic</p>
+              <div class="product-price">R$ 1.950</div>
+              <div class="product-actions">
+                <button class="btn-buy" onclick="window.open('https://wa.me/5575999544520?text=Quero%20comprar%20o%20iPhone%2012', '_blank')">
+                  Comprar
+                </button>
+                <button class="btn-info">Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- iPhone 13 -->
+          <div class="product-card">
+            <div class="product-image">
+              <div class="product-phone" style="transform: scale(1.05);"></div>
+              <div class="product-badge">POPULAR</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">iPhone 13</h3>
+              <p class="product-spec">128GB • A15 Bionic</p>
+              <div class="product-price">R$ 2.550</div>
+              <div class="product-actions">
+                <button class="btn-buy" onclick="window.open('https://wa.me/5575999544520?text=Quero%20comprar%20o%20iPhone%2013', '_blank')">
+                  Comprar
+                </button>
+                <button class="btn-info">Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- iPhone 14 -->
+          <div class="product-card">
+            <div class="product-image">
+              <div class="product-phone" style="transform: scale(1.08);"></div>
+              <div class="product-badge">NOVO</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">iPhone 14</h3>
+              <p class="product-spec">128GB • A15 Bionic</p>
+              <div class="product-price">R$ 3.150</div>
+              <div class="product-actions">
+                <button class="btn-buy" onclick="window.open('https://wa.me/5575999544520?text=Quero%20comprar%20o%20iPhone%2014', '_blank')">
+                  Comprar
+                </button>
+                <button class="btn-info">Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- iPhone 15 -->
+          <div class="product-card">
+            <div class="product-image">
+              <div class="product-phone" style="transform: scale(1.1);"></div>
+              <div class="product-badge">TOPO DE LINHA</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">iPhone 15</h3>
+              <p class="product-spec">128GB • A17 Pro</p>
+              <div class="product-price">R$ 4.200</div>
+              <div class="product-actions">
+                <button class="btn-buy" onclick="window.open('https://wa.me/5575999544520?text=Quero%20comprar%20o%20iPhone%2015', '_blank')">
+                  Comprar
+                </button>
+                <button class="btn-info">Detalhes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features-section" id="sobre">
+      <div class="container">
+        <div class="section-header">
+          <h2>Por Que Comprar Conosco?</h2>
+          <p>A J.JIMPORTS TECH oferece mais que produtos, oferece qualidade e confiança</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Atendimento Premium</h3>
+            <p>Equipe disponível 24h para responder suas dúvidas e ajudar na melhor escolha para suas necessidades.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">✅</div>
+            <h3>Produtos 100% Originais</h3>
+            <p>Todos os aparelhos são verificados e testados para garantir qualidade, funcionamento perfeito e durabilidade.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <h3>Garantia Completa</h3>
+            <p>Seu iPhone vem com garantia especial J.JIMPORTS TECH, protegendo seu investimento com confiança.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">📦</div>
+            <h3>Entrega Segura</h3>
+            <p>Envio rápido e seguro para todo o Brasil com rastreamento completo de sua compra do início ao fim.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">💳</div>
+            <h3>Parcelamento Flexível</h3>
+            <p>Compre parcelado em até 12x com aprovação rápida. Sem burocracia, apenas segurança e facilidade.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🚀</div>
+            <h3>Suporte Pós-Compra</h3>
+            <p>Continuamos ao seu lado após a compra. Dúvidas técnicas? Temos especialistas prontos para ajudar!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="contato">
+      <div class="container">
+        <div class="cta-box">
+          <div class="cta-content">
+            <h2>Pronto para Seu Novo iPhone?</h2>
+            <p>Não perca tempo! Fale com a J.JIMPORTS TECH agora mesmo e garanta seu aparelho com as melhores condições do mercado.</p>
+            <a href="https://wa.me/5575999544520?text=Olá%2C%20gostaria%20de%20comprar%20um%20iPhone%20da%20J.JIMPORTS%20TECH.%20Qual%20é%20a%20melhor%20opção%20para%20mim%3F" target="_blank" class="btn btn-primary">
+              💬 Falar no WhatsApp Agora
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-text">© 2026 J.JIMPORTS TECH. Todos os direitos reservados.</div>
+        <div class="footer-text">Eletrônicos e Acessórios Premium | Atendimento 24h</div>
+        <div class="footer-text">Desenvolvido com ❤️ para melhorar sua experiência</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT BUTTON -->
+  <a href="https://wa.me/5575999544520?text=Olá%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20iPhones%20da%20J.JIMPORTS%20TECH" target="_blank" class="whatsapp-float" aria-label="Contato WhatsApp">
+    <svg viewBox="0 0 24 24">
+      <path d="M20.52 3.48A11.75 11.75 0 0 0 3.4 18.63L2 22l3.45-1.35A11.8 11.8 0 0 0 12 23.9C17.72 23.9 22.47 19.15 22.47 13.45a11.7 11.7 0 0 0-1.95-6.97ZM12 21.6c-2.08 0-4.12-.56-5.9-1.62l-.42-.25-2.05.8.8-2.01-.27-.42A9.8 9.8 0 0 1 12 4.18a9.72 9.72 0 0 1 9.7 9.7c0 2.62-1.06 5.08-2.9 6.92A9.7 9.7 0 0 1 12 21.6Zm5.4-7.3c-.29-.15-1.72-.85-1.99-.94-.27-.1-.47-.15-.67.15-.2.3-.76.94-.93 1.13-.17.2-.34.22-.63.07-.29-.15-1.22-.45-2.32-1.45-.86-.77-1.44-1.72-1.61-2.01-.17-.3-.02-.46.13-.61.13-.13.3-.34.45-.5.15-.17.2-.29.3-.48.1-.19.05-.36-.02-.5-.07-.15-.67-1.62-.92-2.2-.24-.57-.49-.49-.67-.5h-.57c-.2 0-.52.07-.79.36-.27.29-1.04 1.02-1.04 2.49s1.06 2.89 1.2 3.08c.15.2 2.08 3.18 5.04 4.46.7.3 1.25.48 1.68.62.71.23 1.35.2 1.86.12.57-.08 1.72-.7 1.97-1.38.24-.68.24-1.26.17-1.38-.07-.12-.27-.2-.56-.35Z"/>
+    </svg>
+  </a>
+
+</body>
+</html>
