@@ -97,54 +97,66 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      font-size: 1.3rem;
       font-weight: 800;
       letter-spacing: -1px;
       text-decoration: none;
       color: var(--text-primary);
+      font-size: 1.1rem;
     }
 
-    .logo-icon {
+    .logo-circle {
       width: 48px;
       height: 48px;
-      background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-      border-radius: 14px;
+      border-radius: 50%;
+      border: 2px solid var(--primary-blue);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 30px var(--glow);
+      box-shadow: 0 0 30px rgba(14, 165, 255, 0.4);
       position: relative;
-      overflow: hidden;
+      background: rgba(14, 165, 255, 0.05);
     }
 
-    .logo-icon::before {
+    .logo-phone {
+      width: 24px;
+      height: 32px;
+      border: 2px solid white;
+      border-radius: 6px;
+      position: relative;
+    }
+
+    .logo-phone::before {
       content: '';
       position: absolute;
-      width: 22px;
-      height: 30px;
-      border: 2.5px solid white;
-      border-radius: 7px;
-      box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.2);
+      width: 8px;
+      height: 2px;
+      background: white;
+      border-radius: 999px;
+      left: 50%;
+      top: -5px;
+      transform: translateX(-50%);
     }
 
     .logo-text {
       display: flex;
       flex-direction: column;
-      line-height: 1.1;
+      line-height: 1;
     }
 
     .logo-text .main {
-      font-size: 1.1rem;
+      font-size: 0.95rem;
       background: linear-gradient(135deg, var(--secondary-blue), #6dd5ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      letter-spacing: 0.5px;
     }
 
     .logo-text .sub {
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       color: var(--text-secondary);
-      letter-spacing: 0.5px;
+      letter-spacing: 0.8px;
+      font-weight: 600;
     }
 
     nav {
@@ -248,11 +260,11 @@
     }
 
     .hero-text h1 {
-      font-size: clamp(3rem, 6vw, 5.5rem);
-      line-height: 1.1;
-      font-weight: 900;
+      font-size: clamp(2.8rem, 5vw, 4.8rem);
+      line-height: 1.15;
+      font-weight: 700;
       margin-bottom: 20px;
-      letter-spacing: -2px;
+      letter-spacing: -1.5px;
     }
 
     .hero-text h1 .blue {
@@ -263,7 +275,7 @@
     }
 
     .hero-text p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: var(--text-secondary);
       margin-bottom: 30px;
       line-height: 1.8;
@@ -290,17 +302,14 @@
     }
 
     .stat-value {
-      font-size: 2.5rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, var(--secondary-blue), #6dd5ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--secondary-blue);
       margin-bottom: 5px;
     }
 
     .stat-label {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
     }
 
@@ -312,108 +321,25 @@
       justify-content: center;
     }
 
-    .phone-circle {
+    .hero-image {
       width: 100%;
-      max-width: 500px;
-      aspect-ratio: 1;
-      background: radial-gradient(circle at 30% 30%, rgba(14, 165, 255, 0.2), transparent 60%);
-      border: 2px solid rgba(14, 165, 255, 0.4);
-      border-radius: 50%;
+      max-width: 400px;
+      height: 550px;
+      background: linear-gradient(135deg, rgba(14, 165, 255, 0.1), transparent);
+      border-radius: 24px;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
-      box-shadow: 
-        0 0 60px rgba(14, 165, 255, 0.15),
-        inset 0 0 60px rgba(14, 165, 255, 0.05);
-      animation: float 6s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-20px);
-      }
-    }
-
-    .phone-content {
-      text-align: center;
-      z-index: 2;
-    }
-
-    .phone-logo {
-      font-size: 3rem;
-      font-weight: 900;
-      margin-bottom: 15px;
-      letter-spacing: -1px;
-    }
-
-    .phone-logo .blue {
-      background: linear-gradient(135deg, var(--secondary-blue), #6dd5ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .phone-sub {
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .phone-tech {
-      color: var(--secondary-blue);
-      text-shadow: 0 0 15px rgba(49, 213, 255, 0.4);
-    }
-
-    .phone-mockup {
-      width: 140px;
-      height: 170px;
-      border: 4px solid rgba(255, 255, 255, 0.9);
-      border-radius: 28px;
-      background: linear-gradient(135deg, #0f1720, #1a2840);
-      position: relative;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-      margin: 0 auto;
-    }
-
-    .phone-mockup::before {
-      content: '';
-      position: absolute;
-      width: 24px;
-      height: 10px;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 999px;
-      left: 50%;
-      top: -10px;
-      transform: translateX(-50%);
-    }
-
-    .phone-mockup::after {
-      content: '';
-      position: absolute;
-      width: 10px;
-      height: 60px;
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 999px;
-      right: -12px;
-      top: 40px;
-    }
-
-    .phone-circle::before {
-      content: '';
-      position: absolute;
-      width: 90%;
-      height: 90%;
       border: 1px solid rgba(14, 165, 255, 0.2);
-      border-radius: 50%;
-      top: 5%;
-      left: 5%;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(14, 165, 255, 0.15);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 20px;
     }
 
     /* PRODUCTS */
@@ -427,14 +353,14 @@
     }
 
     .section-header h2 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 900;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-weight: 700;
       margin-bottom: 15px;
       letter-spacing: -1px;
     }
 
     .section-header p {
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: var(--text-secondary);
       max-width: 600px;
       margin: 0 auto;
@@ -442,101 +368,44 @@
 
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 24px;
-      margin-bottom: 40px;
     }
 
     .product-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 24px;
-      padding: 24px;
-      transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
-      position: relative;
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.5));
+      border: 1px solid rgba(14, 165, 255, 0.15);
+      border-radius: 20px;
       overflow: hidden;
+      transition: all 0.4s ease;
       backdrop-filter: blur(10px);
-    }
-
-    .product-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(14, 165, 255, 0.1), transparent);
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      pointer-events: none;
+      display: flex;
+      flex-direction: column;
     }
 
     .product-card:hover {
-      transform: translateY(-12px);
-      border-color: rgba(14, 165, 255, 0.4);
-      box-shadow: 
-        0 20px 50px rgba(14, 165, 255, 0.2),
-        inset 0 0 30px rgba(14, 165, 255, 0.05);
-    }
-
-    .product-card:hover::before {
-      opacity: 1;
+      transform: translateY(-8px);
+      border-color: rgba(14, 165, 255, 0.3);
+      box-shadow: 0 20px 50px rgba(14, 165, 255, 0.15);
     }
 
     .product-image {
-      height: 240px;
-      background: linear-gradient(135deg, rgba(14, 165, 255, 0.1), rgba(49, 213, 255, 0.05));
-      border-radius: 18px;
+      width: 100%;
+      height: 300px;
+      background: linear-gradient(135deg, rgba(14, 165, 255, 0.08), transparent);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 20px;
-      border: 1px solid rgba(14, 165, 255, 0.15);
+      border-bottom: 1px solid rgba(14, 165, 255, 0.1);
       position: relative;
       overflow: hidden;
     }
 
-    .product-phone {
-      width: 110px;
-      height: 140px;
-      border: 3px solid rgba(255, 255, 255, 0.95);
-      border-radius: 24px;
-      background: linear-gradient(135deg, #0f1720, #1a2840);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-      position: relative;
-      animation: rotatePhone 8s ease-in-out infinite;
-    }
-
-    @keyframes rotatePhone {
-      0%, 100% {
-        transform: rotateY(0deg) rotateX(0deg);
-      }
-      50% {
-        transform: rotateY(15deg) rotateX(5deg);
-      }
-    }
-
-    .product-phone::before {
-      content: '';
-      position: absolute;
-      width: 18px;
-      height: 8px;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 999px;
-      left: 50%;
-      top: -8px;
-      transform: translateX(-50%);
-    }
-
-    .product-phone::after {
-      content: '';
-      position: absolute;
-      width: 8px;
-      height: 50px;
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 999px;
-      right: -10px;
-      top: 40px;
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 20px;
     }
 
     .product-badge {
@@ -547,38 +416,37 @@
       color: var(--success);
       padding: 6px 12px;
       border-radius: 50px;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 700;
       border: 1px solid rgba(16, 185, 129, 0.4);
       letter-spacing: 0.5px;
     }
 
     .product-info {
-      position: relative;
-      z-index: 2;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
     }
 
     .product-name {
-      font-size: 1.4rem;
-      font-weight: 800;
+      font-size: 1.3rem;
+      font-weight: 700;
       margin-bottom: 8px;
-      letter-spacing: -0.5px;
     }
 
     .product-spec {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
       margin-bottom: 15px;
     }
 
     .product-price {
-      font-size: 2rem;
-      font-weight: 900;
-      background: linear-gradient(135deg, var(--secondary-blue), #6dd5ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--secondary-blue);
       margin-bottom: 20px;
+      margin-top: auto;
     }
 
     .product-actions {
@@ -596,6 +464,7 @@
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
+      font-size: 0.9rem;
     }
 
     .btn-buy:hover {
@@ -613,6 +482,7 @@
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
+      font-size: 0.9rem;
     }
 
     .btn-info:hover {
@@ -627,40 +497,41 @@
 
     .features-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
     }
 
     .feature-card {
-      background: linear-gradient(135deg, rgba(14, 165, 255, 0.08), rgba(49, 213, 255, 0.03));
-      border: 1px solid var(--border-color);
-      border-radius: 24px;
-      padding: 40px 30px;
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid rgba(14, 165, 255, 0.1);
+      border-radius: 20px;
+      padding: 32px 24px;
       text-align: center;
-      transition: all 0.4s ease;
+      transition: all 0.3s ease;
       backdrop-filter: blur(10px);
     }
 
     .feature-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(14, 165, 255, 0.4);
-      box-shadow: 0 20px 50px rgba(14, 165, 255, 0.15);
+      transform: translateY(-6px);
+      border-color: rgba(14, 165, 255, 0.3);
+      box-shadow: 0 15px 40px rgba(14, 165, 255, 0.1);
     }
 
     .feature-icon {
-      font-size: 3rem;
-      margin-bottom: 20px;
+      font-size: 2.5rem;
+      margin-bottom: 15px;
     }
 
     .feature-card h3 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 15px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 12px;
     }
 
     .feature-card p {
       color: var(--text-secondary);
-      line-height: 1.7;
+      line-height: 1.6;
+      font-size: 0.95rem;
     }
 
     /* CTA */
@@ -669,42 +540,23 @@
     }
 
     .cta-box {
-      background: linear-gradient(135deg, rgba(14, 165, 255, 0.15), rgba(49, 213, 255, 0.08));
-      border: 2px solid rgba(14, 165, 255, 0.3);
-      border-radius: 32px;
+      background: linear-gradient(135deg, rgba(14, 165, 255, 0.12), rgba(49, 213, 255, 0.05));
+      border: 2px solid rgba(14, 165, 255, 0.25);
+      border-radius: 28px;
       padding: 60px 40px;
       text-align: center;
       backdrop-filter: blur(10px);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-box::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -10%;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(14, 165, 255, 0.1), transparent);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    .cta-content {
-      position: relative;
-      z-index: 2;
     }
 
     .cta-box h2 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 900;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
       margin-bottom: 20px;
       letter-spacing: -1px;
     }
 
     .cta-box p {
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: var(--text-secondary);
       margin-bottom: 30px;
       max-width: 600px;
@@ -729,7 +581,7 @@
 
     .footer-text {
       color: var(--text-muted);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
 
     /* WHATSAPP FLOAT */
@@ -796,6 +648,11 @@
         height: 400px;
       }
 
+      .hero-image {
+        max-width: 300px;
+        height: 400px;
+      }
+
       .hero-stats {
         grid-template-columns: 1fr;
       }
@@ -838,7 +695,9 @@
     <div class="container">
       <div class="header-content">
         <a href="#" class="logo">
-          <div class="logo-icon"></div>
+          <div class="logo-circle">
+            <div class="logo-phone"></div>
+          </div>
           <div class="logo-text">
             <div class="main">J.JIMPORTS</div>
             <div class="sub">TECH</div>
@@ -889,7 +748,7 @@
               </div>
               <div class="stat-item">
                 <div class="stat-value">+150</div>
-                <div class="stat-label">Clientes Felizes</div>
+                <div class="stat-label">Clientes</div>
               </div>
               <div class="stat-item">
                 <div class="stat-value">24h</div>
@@ -899,14 +758,8 @@
           </div>
 
           <div class="hero-visual">
-            <div class="phone-circle">
-              <div class="phone-content">
-                <div class="phone-logo">
-                  <span class="blue">J.</span>JIMPORTS
-                </div>
-                <div class="phone-sub">Eletrônicos <span class="phone-tech">TECH</span></div>
-                <div class="phone-mockup"></div>
-              </div>
+            <div class="hero-image">
+              <img src="https://images.unsplash.com/photo-1592286927505-1def25115558?w=400&h=600&fit=crop" alt="iPhone 15 Pro" />
             </div>
           </div>
         </div>
@@ -918,14 +771,14 @@
       <div class="container">
         <div class="section-header">
           <h2>Modelos em Destaque</h2>
-          <p>Escolha o iPhone perfeito para suas necessidades com as melhores configurações</p>
+          <p>Escolha o iPhone perfeito para suas necessidades</p>
         </div>
 
         <div class="products-grid">
           <!-- iPhone 12 -->
           <div class="product-card">
             <div class="product-image">
-              <div class="product-phone"></div>
+              <img src="https://images.unsplash.com/photo-1592286927505-1def25115558?w=300&h=350&fit=crop" alt="iPhone 12" />
               <div class="product-badge">DISPONÍVEL</div>
             </div>
             <div class="product-info">
@@ -944,7 +797,7 @@
           <!-- iPhone 13 -->
           <div class="product-card">
             <div class="product-image">
-              <div class="product-phone" style="transform: scale(1.05);"></div>
+              <img src="https://images.unsplash.com/photo-1611532736579-6b16e2b50449?w=300&h=350&fit=crop" alt="iPhone 13" />
               <div class="product-badge">POPULAR</div>
             </div>
             <div class="product-info">
@@ -963,7 +816,7 @@
           <!-- iPhone 14 -->
           <div class="product-card">
             <div class="product-image">
-              <div class="product-phone" style="transform: scale(1.08);"></div>
+              <img src="https://images.unsplash.com/photo-1649523570500-1ab2d65b8030?w=300&h=350&fit=crop" alt="iPhone 14" />
               <div class="product-badge">NOVO</div>
             </div>
             <div class="product-info">
@@ -982,7 +835,7 @@
           <!-- iPhone 15 -->
           <div class="product-card">
             <div class="product-image">
-              <div class="product-phone" style="transform: scale(1.1);"></div>
+              <img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=300&h=350&fit=crop" alt="iPhone 15" />
               <div class="product-badge">TOPO DE LINHA</div>
             </div>
             <div class="product-info">
@@ -1006,44 +859,44 @@
       <div class="container">
         <div class="section-header">
           <h2>Por Que Comprar Conosco?</h2>
-          <p>A J.JIMPORTS TECH oferece mais que produtos, oferece qualidade e confiança</p>
+          <p>Qualidade, confiança e atendimento de primeira qualidade</p>
         </div>
 
         <div class="features-grid">
           <div class="feature-card">
             <div class="feature-icon">⚡</div>
             <h3>Atendimento Premium</h3>
-            <p>Equipe disponível 24h para responder suas dúvidas e ajudar na melhor escolha para suas necessidades.</p>
+            <p>Equipe disponível 24h para responder suas dúvidas e ajudar na escolha certa.</p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon">✅</div>
             <h3>Produtos 100% Originais</h3>
-            <p>Todos os aparelhos são verificados e testados para garantir qualidade, funcionamento perfeito e durabilidade.</p>
+            <p>Todos os aparelhos são verificados e testados para garantir qualidade.</p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon">🛡️</div>
             <h3>Garantia Completa</h3>
-            <p>Seu iPhone vem com garantia especial J.JIMPORTS TECH, protegendo seu investimento com confiança.</p>
+            <p>Seu iPhone vem com garantia especial J.JIMPORTS TECH com confiança.</p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon">📦</div>
             <h3>Entrega Segura</h3>
-            <p>Envio rápido e seguro para todo o Brasil com rastreamento completo de sua compra do início ao fim.</p>
+            <p>Envio rápido e seguro com rastreamento completo para todo o Brasil.</p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon">💳</div>
             <h3>Parcelamento Flexível</h3>
-            <p>Compre parcelado em até 12x com aprovação rápida. Sem burocracia, apenas segurança e facilidade.</p>
+            <p>Compre parcelado em até 12x com aprovação rápida e sem burocracia.</p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon">🚀</div>
             <h3>Suporte Pós-Compra</h3>
-            <p>Continuamos ao seu lado após a compra. Dúvidas técnicas? Temos especialistas prontos para ajudar!</p>
+            <p>Continuamos ao seu lado após a compra com especialistas prontos para ajudar.</p>
           </div>
         </div>
       </div>
@@ -1053,13 +906,11 @@
     <section class="cta-section" id="contato">
       <div class="container">
         <div class="cta-box">
-          <div class="cta-content">
-            <h2>Pronto para Seu Novo iPhone?</h2>
-            <p>Não perca tempo! Fale com a J.JIMPORTS TECH agora mesmo e garanta seu aparelho com as melhores condições do mercado.</p>
-            <a href="https://wa.me/5575999544520?text=Olá%2C%20gostaria%20de%20comprar%20um%20iPhone%20da%20J.JIMPORTS%20TECH.%20Qual%20é%20a%20melhor%20opção%20para%20mim%3F" target="_blank" class="btn btn-primary">
-              💬 Falar no WhatsApp Agora
-            </a>
-          </div>
+          <h2>Pronto para Seu Novo iPhone?</h2>
+          <p>Fale com a J.JIMPORTS TECH agora mesmo e garanta seu aparelho com as melhores condições do mercado.</p>
+          <a href="https://wa.me/5575999544520?text=Olá%2C%20gostaria%20de%20comprar%20um%20iPhone%20da%20J.JIMPORTS%20TECH.%20Qual%20é%20a%20melhor%20opção%20para%20mim%3F" target="_blank" class="btn btn-primary">
+            💬 Falar no WhatsApp Agora
+          </a>
         </div>
       </div>
     </section>
@@ -1071,7 +922,7 @@
       <div class="footer-content">
         <div class="footer-text">© 2026 J.JIMPORTS TECH. Todos os direitos reservados.</div>
         <div class="footer-text">Eletrônicos e Acessórios Premium | Atendimento 24h</div>
-        <div class="footer-text">Desenvolvido com ❤️ para melhorar sua experiência</div>
+        <div class="footer-text">Compre com segurança e confiança</div>
       </div>
     </div>
   </footer>
